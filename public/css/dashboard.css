@@ -1,0 +1,1243 @@
+/* CLIENT DASHBOARD STARTS */
+#dashboard {
+  width: 100%;
+  height: 100vh;
+  background: rgb(239, 234, 244);
+  overflow: hidden;
+}
+#dashboard .container {
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+/* sidebar */
+#dashboard .sidebar {
+  width: 18rem;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 1.5rem;
+  padding: 0 0.5rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  overflow-y: scroll;
+}
+#dashboard .sidebar .top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.5rem;
+}
+#dashboard .sidebar .logo {
+  width: 100%;
+  max-width: 10rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+#dashboard .sidebar .menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.5rem;
+}
+#dashboard .sidebar .item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+#dashboard .sidebar .item:hover {
+  background-color: rgba(239, 234, 244, 0.8);
+}
+#dashboard .sidebar .item .icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: ease 0.3s;
+}
+#dashboard .sidebar .item:hover .icon {
+  background-color: var(--clr2);
+}
+#dashboard .sidebar .item .icon iconify-icon {
+  color: #8e8ea1;
+  font-size: 1.5rem;
+  transition: ease 0.3s;
+}
+#dashboard .sidebar .item:hover .icon iconify-icon {
+  color: var(--clr1);
+  transform: rotate(360deg);
+}
+#dashboard .sidebar .item p {
+  color: #8e8ea1;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+#dashboard .sidebar .item:hover p {
+  color: var(--clr4);
+}
+@media only screen and (max-width: 880px) {
+  #dashboard .sidebar {
+    width: 18rem;
+  }
+}
+@media only screen and (max-width: 425px) {
+  #dashboard .sidebar .logo {
+    display: none;
+  }
+  #dashboard .sidebar {
+    border-radius: 1rem;
+    padding: 0;
+  }
+  #dashboard .sidebar,
+  #dashboard .sidebar .top,
+  #dashboard .sidebar .menu,
+  #dashboard .sidebar .item {
+    width: fit-content;
+  }
+  #dashboard .sidebar .item p {
+    display: none;
+  }
+}
+
+/* main section */
+main {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* topbar */
+#dashboard .topbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1rem;
+}
+#dashboard .topbar h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+}
+#dashboard .topbar .user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: #e0c8ff79;
+  padding: 0.5rem 1rem;
+  border-radius: 5rem;
+}
+#dashboard .topbar .user:hover {
+  background-color: var(--clr2);
+  gap: 1.5rem;
+}
+#dashboard .topbar .user img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: solid 0.2rem var(--clr2);
+}
+#dashboard .topbar .user p {
+  text-transform: capitalize;
+  font-weight: 500;
+  color: var(--clr4);
+  transition: ease 0.3s;
+}
+#dashboard .topbar .user:hover p {
+  color: var(--clr1);
+}
+@media only screen and (max-width: 550px) {
+  #dashboard .topbar .user p {
+    display: none;
+  }
+}
+
+/* main */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: scroll;
+}
+.main .row {
+  width: 100%;
+  border-radius: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+.main .card {
+  background-color: #fff;
+  width: 100%;
+  max-width: 25rem;
+  height: 25rem;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.main .row:nth-child(1) .card:nth-child(3) {
+  max-width: 21rem;
+}
+.main .row:nth-child(2) .card:nth-child(1) {
+  max-width: 51rem;
+}
+.main .row:nth-child(2) .card:nth-child(2) {
+  max-width: 21rem;
+}
+@media only screen and (max-width: 980px) {
+  .main .row {
+    flex-direction: column;
+  }
+  .main .card {
+    max-width: initial !important;
+  }
+}
+.main .card_heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.main .card_heading .icon {
+  background-color: var(--clr5);
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.main .card_heading .icon iconify-icon {
+  font-size: 1.2rem;
+}
+.main .card_heading p {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.main .card_body {
+  width: 100%;
+  height: 18rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow-y: scroll;
+  padding-bottom: 2rem;
+}
+
+/* freatured services */
+#cDash .service {
+  display: flex;
+  gap: 0.5rem;
+}
+#cDash .primary {
+  width: 100%;
+  height: 4rem;
+  background-color: var(--clr1);
+  color: var(--clr4);
+  border: 1px solid #d2d0e2;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+#cDash .primary iconify-icon {
+  font-size: 1.5rem;
+}
+#cDash .primary p {
+  text-transform: capitalize;
+}
+#cDash .primary:hover {
+  background-color: var(--clr2);
+  color: var(--clr1);
+}
+#cDash .secondary {
+  width: 6rem;
+  height: 4rem;
+  background-color: var(--clr5);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#cDash .secondary .worker_count {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+#cDash .secondary p {
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+
+/* featured workers */
+#cDash .worker {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+}
+#cDash .worker .details {
+  width: 100%;
+  background-color: var(--clr1);
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  border: 1px solid #d2d0e2;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+#cDash .worker .image {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: crimson;
+  overflow: hidden;
+  border: solid 0.1rem var(--clr2);
+}
+#cDash .worker img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#cDash .worker .name {
+  color: var(--clr4);
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+#cDash .worker .service {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--clr2);
+  text-transform: capitalize;
+}
+#cDash .worker .hire {
+  padding: 0.5rem;
+  background-color: var(--clr5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  color: var(--clr4);
+  font-weight: 500;
+  text-transform: capitalize;
+}
+#cDash .worker .hire:hover {
+  background-color: var(--clr2);
+  color: var(--clr1);
+}
+
+/* your jobs */
+#cDash .job {
+  width: 100%;
+  background-color: var(--clr1);
+  border: 1px solid #d2d0e2;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+#cDash .job:hover {
+  background-color: var(--clr2);
+}
+#cDash .job .title {
+  color: var(--clr4);
+}
+#cDash .job:hover .title {
+  color: var(--clr1);
+}
+#cDash .job .service {
+  color: var(--clr2);
+  text-transform: capitalize;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+#cDash .job:hover .service {
+  color: var(--clr5);
+}
+
+/* recent transactions */
+#cDash .transaction {
+  border-collapse: collapse;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+#cDash .transaction thead {
+  background-color: var(--clr5);
+}
+#cDash .transaction tbody tr:nth-child(even) {
+  text-align: center;
+  background-color: var(--clr1);
+  border-top: 1px solid #d2d0e2;
+}
+#cDash .transaction tbody tr:nth-child(odd) {
+  text-align: center;
+  background-color: #fff;
+  border-top: 1px solid #d2d0e2;
+}
+@media only screen and (max-width: 425px) {
+  #cDash .transaction thead th:nth-child(2),
+  #cDash .transaction tbody td:nth-child(2) {
+    display: none;
+  }
+}
+#cDash .transaction th {
+  font-weight: 500;
+  padding: 0.5rem;
+}
+#cDash .transaction td {
+  padding: 0.5rem;
+}
+#cDash .transaction td a {
+  color: var(--clr4);
+  font-size: 1.5rem;
+  background-color: var(--clr5);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+#cDash .transaction td a:hover {
+  background-color: var(--clr2);
+  color: var(--clr1);
+}
+
+/* your workers */
+#cDash a.worker .details {
+  transition: ease 0.3s;
+}
+#cDash a.worker:hover .details {
+  background-color: var(--clr2);
+}
+#cDash a.worker:hover .image {
+  border-color: var(--clr1);
+}
+#cDash a.worker:hover .name {
+  color: var(--clr1);
+}
+#cDash a.worker:hover .service {
+  color: var(--clr5);
+}
+/* CLIENT DASHBOARD ENDS */
+
+/* CLIENT PROFILE STARTS */
+#cProfile .card:first-child {
+  max-width: 35rem;
+  height: initial;
+}
+#cProfile .card:last-child {
+  max-width: 25rem;
+}
+#cProfile .card_body {
+  overflow: initial;
+  height: initial;
+}
+#cProfile .personal_info,
+#cProfile .change_pass {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media only screen and (max-width: 960px) {
+  #cProfile .row {
+    flex-direction: column;
+  }
+  #cProfile .card:last-child {
+    max-width: 35rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #cProfile .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  #cProfile .button {
+    max-width: 15rem;
+  }
+}
+/* CLIENT PROFILE ENDS */
+
+/* CLIENT SERVICES STARTS */
+#cServices .row {
+  flex-wrap: wrap;
+}
+#cServices .card {
+  max-width: inherit;
+  height: inherit;
+}
+#cServices .card_body {
+  height: inherit;
+  padding: 0;
+  flex-direction: row;
+  gap: 2rem;
+}
+#cServices .cover {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+#cServices .desc {
+  text-align: justify;
+}
+#cServices .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+#cServices .info .price {
+  font-size: 2rem;
+  font-weight: 600;
+}
+#cServices .info p {
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+#cServices .info a {
+  width: 30rem;
+}
+@media only screen and (max-width: 880px) {
+  #cServices .cover {
+    width: 8rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #cServices .card_body {
+    flex-direction: column;
+    align-items: center;
+  }
+  #cServices .cover {
+    width: 100%;
+  }
+}
+/* CLIENT SERVICES ENDS */
+
+/* CLIENT JOBS STARTS */
+#cJobs .post_job {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#cJobs .card {
+  max-width: inherit;
+  height: inherit;
+}
+#cJobs .card_body {
+  height: initial;
+  padding: 0;
+}
+#cJobs .job {
+  color: var(--clr4);
+  background-color: var(--clr1);
+  border: var(--border);
+  border-width: 0.2rem;
+  border-radius: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+#cJobs .job .col:first-child {
+  width: 100%;
+}
+#cJobs .job .title {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+#cJobs .job .service {
+  color: var(--clr2);
+  font-weight: 500;
+  text-transform: capitalize;
+}
+#cJobs .job .col:last-child {
+  display: flex;
+  gap: 1rem;
+}
+#cJobs .job .col:last-child a:first-child {
+  background-color: var(--clr2);
+}
+#cJobs .job .col:last-child a:last-child {
+  background-color: crimson;
+}
+#cJobs .job .button {
+  padding: 0.5rem 2rem;
+}
+@media only screen and (max-width: 768px) {
+  #cJobs .job {
+    flex-direction: column;
+  }
+}
+/* CLIENT JOBS ENDS */
+
+/* CLIENT WORKERS STARTS */
+#cWorkers .search_bar {
+  padding: 0.5rem 1rem;
+  letter-spacing: 1px;
+  border: solid 1px #2d27274b;
+  border-radius: 0.3rem;
+  background-color: var(--clr1);
+  outline: none;
+}
+#cWorkers .filter select {
+  padding: 0.2rem;
+  letter-spacing: 1px;
+  border: solid 1px #2d27274b;
+  border-radius: 0.3rem;
+  background-color: var(--clr1);
+  outline: none;
+}
+#cWorkers .filter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 0.5rem;
+}
+#cWorkers .workers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+#cWorkers .card {
+  max-width: inherit;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  border: solid 1px #2d27274b;
+}
+#cWorkers .card img {
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  border: solid 1px #2d27272c;
+  border-radius: 0.5rem;
+}
+#cWorkers .card .row {
+  align-items: flex-start;
+}
+#cWorkers .name {
+  font-weight: 600;
+}
+#cWorkers .service {
+  color: var(--clr2);
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 0.9rem;
+}
+#cWorkers .rating {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  padding-top: 3px;
+  color: var(--clr5);
+}
+#cWorkers .rate {
+  color: var(--clr2);
+}
+@media only screen and (max-width: 980px) {
+  #cWorkers .workers .row {
+    flex-direction: row;
+  }
+}
+@media only screen and (max-width: 550px) {
+  #cWorkers .card .button {
+    width: fit-content;
+  }
+}
+/* CLIENT WORKERS ENDS */
+
+/* CLIENT TRANSACTIONS STARTS */
+#cTrans .card {
+  max-width: inherit;
+  height: inherit;
+}
+#cTrans .card_body {
+  height: initial;
+  padding: 0;
+}
+#cTrans .transaction {
+  border-collapse: collapse;
+  border-radius: 0.5em;
+  overflow: hidden;
+}
+#cTrans .transaction thead {
+  background-color: var(--clr5);
+}
+#cTrans .transaction th {
+  font-weight: 500;
+  padding: 0.5rem;
+}
+#cTrans .transaction td {
+  padding: 0.5rem;
+  text-align: center;
+}
+#cTrans .transaction tbody tr {
+  border: solid 1px #2d27271f;
+  border-radius: 0.5rem;
+}
+#cTrans td:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#cTrans td:last-child a {
+  background-color: var(--clr5);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: var(--clr4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#cTrans td:last-child a:hover {
+  background-color: var(--clr2);
+  color: var(--clr1);
+}
+/* CLIENT TRANSACTIONS ENDS */
+
+/* WORKER DASHBOARD STARTS */
+#wDash .card {
+  max-width: initial;
+}
+/* jobs */
+#wDash .job {
+  width: 100%;
+  background-color: var(--clr1);
+  border: 1px solid #d2d0e2;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+#wDash .job:hover {
+  background-color: var(--clr2);
+}
+#wDash .job .title {
+  color: var(--clr4);
+}
+#wDash .job:hover .title {
+  color: var(--clr1);
+}
+#wDash .job .service {
+  color: var(--clr2);
+  text-transform: capitalize;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+#wDash .job:hover .service {
+  color: var(--clr5);
+}
+/* recent transactions */
+#wDash .transaction {
+  border-collapse: collapse;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+#wDash .transaction thead {
+  background-color: var(--clr5);
+}
+#wDash .transaction tbody tr:nth-child(even) {
+  text-align: center;
+  background-color: var(--clr1);
+  border-top: 1px solid #d2d0e2;
+}
+#wDash .transaction tbody tr:nth-child(odd) {
+  text-align: center;
+  background-color: #fff;
+  border-top: 1px solid #d2d0e2;
+}
+@media only screen and (max-width: 425px) {
+  #wDash .transaction thead th:nth-child(2),
+  #wDash .transaction tbody td:nth-child(2) {
+    display: none;
+  }
+}
+#wDash .transaction th {
+  font-weight: 500;
+  padding: 0.5rem;
+}
+#wDash .transaction td {
+  padding: 0.5rem;
+}
+#wDash .transaction td a {
+  color: var(--clr4);
+  font-size: 1.5rem;
+  background-color: var(--clr5);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+#wDash .transaction td a:hover {
+  background-color: var(--clr2);
+  color: var(--clr1);
+}
+/* WORKER DASHBOARD ENDS */
+
+/* WORKER JOBS LIST STARTS */
+#wJobList .card {
+  max-width: initial;
+  height: initial;
+}
+#wJobList .card_body {
+  height: initial;
+}
+#wJobList .job {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+#wJobList .job_info {
+  width: 100%;
+}
+#wJobList .job_title {
+  font-weight: 600;
+}
+#wJobList .job_cat {
+  color: var(--clr2);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+/* WORKER JOBS LIST ENDS */
+
+/* WORKER RESUME STARTS */
+#resume .buttons .button {
+  border: none;
+  width: fit-content;
+  max-width: initial;
+  height: fit-content;
+  padding: 1rem 2rem;
+  color: var(--clr1);
+}
+#resume .buttons .button iconify-icon {
+  color: var(--clr1);
+  font-size: 1.5rem;
+}
+#resume .resume {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  font-size: 12px;
+}
+#resume .builder {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  padding-bottom: 4rem;
+}
+#resume .personal,
+#resume .work,
+#resume .education {
+  display: flex;
+  gap: 2rem;
+}
+#resume .builder .r_heading {
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+  background-color: var(--clr5);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+#resume .builder .r_heading:nth-child(3),
+#resume .builder .r_heading:nth-child(8) {
+  margin-top: 2rem;
+}
+#resume .builder .col {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#resume .r_sub_heading {
+  color: var(--clr2);
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin: 1rem 0 0.5rem 0;
+}
+#resume .builder textarea {
+  height: 13.8rem;
+}
+#resume .builder .buttons {
+  margin-top: 2rem;
+}
+@media only screen and (max-width: 768px) {
+  #resume .personal,
+  #resume .work,
+  #resume .education {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+/* WORKER RESUME ENDS */
+
+/* CHECKOUT PAGE STARTS */
+#checkout .card {
+  max-width: inherit;
+  height: inherit;
+}
+#checkout .card_body {
+  height: inherit;
+}
+#checkout .heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+#checkout .pay {
+  font-size: 1.2rem;
+}
+#checkout .checkout .col {
+  flex: 1;
+}
+#checkout .checkout hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+/* CHECKOUT PAGE ENDS */
+
+/* TRACK PAGE STARTS */
+#track .main {
+  flex-direction: row;
+}
+#track .card {
+  max-width: inherit;
+  height: inherit;
+}
+#track .card_body {
+  height: inherit;
+}
+#track .steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+#track .step {
+  background-color: var(--clr1);
+  border: var(--border);
+  border-width: 0.3rem;
+  border-radius: 1rem;
+  width: 15rem;
+  height: 10rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+}
+#track .arrow {
+  font-size: 3rem;
+}
+#track .icon {
+  background-color: var(--clr5);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+#track .confirmation {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+  accent-color: var(--clr2);
+}
+#track .confirmation .button {
+  margin: 0 auto;
+}
+/* TRACK PAGE ENDS */
+
+/* REQUEST PAGE STARTS */
+#requests .requests {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#requests .request {
+  max-width: inherit;
+  height: inherit;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+#requests .info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+#requests .delete {
+  background-color: crimson;
+}
+@media only screen and (max-width: 600px) {
+  #requests .request {
+    flex-direction: column;
+  }
+}
+/* REQUEST PAGE ENDS */
+
+/* JOB PAGE STARTS */
+#wJob .card {
+  max-width: inherit;
+  height: inherit;
+}
+#wJob .job {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#wJob .job_title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+#wJob .button {
+  margin: 0 auto;
+}
+#wJob .rating {
+  display: flex;
+  gap: 0.2rem;
+  font-size: 1.5rem;
+  color: var(--clr5);
+}
+#wJob .rate {
+  color: var(--clr2);
+}
+/* JOB PAGE ENDS */
+
+/* APPLICATION PAGE STARTS */
+#apply .application {
+  max-width: inherit;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#apply .col {
+  flex: 1;
+}
+#apply .button {
+  margin: 0 auto;
+}
+/* APPLICATION PAGE ENDS */
+
+/* ADMIN DASHBOARD STARTS */
+#aDash .card {
+  max-width: initial;
+}
+/* jobs */
+#aDash .job {
+  width: 100%;
+  background-color: var(--clr1);
+  border: 1px solid #d2d0e2;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+#aDash .job:hover {
+  background-color: var(--clr2);
+}
+#aDash .job .title {
+  color: var(--clr4);
+}
+#aDash .job:hover .title {
+  color: var(--clr1);
+}
+#aDash .job .service {
+  color: var(--clr2);
+  text-transform: capitalize;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+#aDash .job:hover .service {
+  color: var(--clr5);
+}
+/* recent transactions */
+#aDash .transaction {
+  border-collapse: collapse;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+#aDash .transaction thead {
+  background-color: var(--clr5);
+}
+#aDash .transaction tbody tr:nth-child(even) {
+  text-align: center;
+  background-color: var(--clr1);
+  border-top: 1px solid #d2d0e2;
+}
+#aDash .transaction tbody tr:nth-child(odd) {
+  text-align: center;
+  background-color: #fff;
+  border-top: 1px solid #d2d0e2;
+}
+@media only screen and (max-width: 425px) {
+  #aDash .transaction thead th:nth-child(2),
+  #aDash .transaction tbody td:nth-child(2) {
+    display: none;
+  }
+}
+#aDash .transaction th {
+  font-weight: 500;
+  padding: 0.5rem;
+}
+#aDash .transaction td {
+  padding: 0.5rem;
+}
+#aDash .transaction td a {
+  color: var(--clr4);
+  font-size: 1.5rem;
+  background-color: var(--clr5);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+#aDash .transaction td a:hover {
+  background-color: var(--clr2);
+  color: var(--clr1);
+}
+#aDash .public {
+  width: 100%;
+  background-color: var(--clr1);
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  border: 1px solid #d2d0e2;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+#aDash .public:hover {
+  background-color: var(--clr5);
+}
+#aDash .public .image {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: crimson;
+  overflow: hidden;
+  border: solid 0.1rem var(--clr2);
+}
+#aDash .public img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#aDash .public .name {
+  color: var(--clr4);
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+#aDash .public .service {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--clr2);
+  text-transform: capitalize;
+}
+/* ADMIN DASHBOARD ENDS */
+
+/* WORKER PROFILE STARTS */
+#resume .aWorker {
+  max-width: inherit;
+  height: inherit;
+}
+#resume .aWorker .head {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+#resume .aWorker img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: solid 1px rgba(0, 0, 0, 0.2);
+}
+#resume .aWorker .name {
+  font-size: 24px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+#resume .aWorker .r_heading {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+#resume .aWorker .personal {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+#resume .aWorker dl {
+  display: flex;
+}
+#resume .aWorker dt {
+  flex: 3;
+  text-transform: capitalize;
+}
+#resume .aWorker dd {
+  flex: 5;
+  font-weight: 500;
+}
+/* WORKER PROFILE ENDS */
+
+/* CLIENTS LIST STARTS */
+#aClients .client_card {
+  max-width: inherit;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+#aClients .client_info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+#aClients .client_img {
+  width: 5rem;
+}
+/* CLIENTS LIST ENDS */
