@@ -77,6 +77,23 @@ class DashboardController extends Controller
     // admin dashboard
     public function admin()
     {
-        return view('admin.dashboard');
+        // clients
+        $clients = User::where('role', 'client')
+        ->inRandomOrder()
+        ->take(5)
+        ->get();
+
+        // workers
+        $workers = User::where('role', 'worker')
+        ->inRandomOrder()
+        ->take(5)
+        ->get();
+
+        // recent transactions
+        $transactions = Transaction::latest()
+        ->take(5)
+        ->get();
+
+        return view('admin.dashboard', compact('clients', 'workers', 'transactions'));
     }
 }

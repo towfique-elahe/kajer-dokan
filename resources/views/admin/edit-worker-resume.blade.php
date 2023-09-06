@@ -10,39 +10,45 @@
 
         <!-- main content -->
         <section class="main">
-            <form class="builder" action="javascript:void()" method="post">
+            <form class="builder" action="{{ route('admin.worker-resume-update') }}" method="POST"
+                enctype="multipart/form-data">
+                @csrf
                 <h3 class="r_heading">
                     Personal Information
                 </h3>
                 <div class="personal">
                     <div class="col">
+                        <input type="hidden" name="worker_id" value="{{ $worker->id }}">
+
                         <div class="input">
-                            <label for="name">Name*</label>
-                            <input type="text" name="name" id="name" value="Jimmy Polo" required>
+                            <label for="worker_name">Name*</label>
+                            <input type="text" name="worker_name" id="worker_name" value="{{ $worker->name }}" disabled
+                                required>
+                            <input type="hidden" name="worker_name" id="worker_name" value="{{ $worker->name }}" required>
                         </div>
                         <div class="input">
-                            <label for="email">Email*</label>
-                            <input type="email" name="email" id="email" value="jimmypolo@email.com" required>
+                            <label for="worker_email">Email*</label>
+                            <input type="email" name="worker_email" id="worker_email" value="{{ $worker->email }}"
+                                disabled required>
+                            <input type="hidden" name="worker_email" id="worker_email" value="{{ $worker->email }}"
+                                required>
                         </div>
                         <div class="input">
-                            <label for="phone">Phone*</label>
-                            <input type="tel" name="phone" id="phone" value="+8801400492967" required>
+                            <label for="worker_phone">Phone*</label>
+                            <input type="tel" name="worker_phone" id="worker_phone" value="{{ $worker->phone }}"
+                                required>
                         </div>
                         <div class="input">
-                            <label for="address">Address*</label>
-                            <input type="text" name="address" id="address"
-                                value="876 Askarabad, Dewanhat, Chattogram - 4100" required>
+                            <label for="worker_address">Address*</label>
+                            <input type="text" name="worker_address" id="worker_address" value="{{ $worker->address }}"
+                                required>
                         </div>
                         <div class="input">
-                            <label for="service">Service*</label>
-                            <select name="service" id="service" required>
-                                <option value="" disabled selected>Select your service type</option>
-                                <option value="cleaing">Cleaning</option>
-                                <option value="eletrical">Electrical</option>
-                                <option value="plumbing">Plumbing</option>
-                                <option value="pest_control">Pest Control</option>
-                                <option value="auto_care">Auto Care</option>
-                            </select>
+                            <label for="worker_service">Service*</label>
+                            <input type="text" name="worker_service" id="worker_service" value="{{ $worker->service }}"
+                                disabled required>
+                            <input type="hidden" name="worker_service" id="worker_service" value="{{ $worker->service }}"
+                                required>
                         </div>
                     </div>
                     <div class="col">
@@ -51,8 +57,8 @@
                             <input type="text" name="nationality" id="nationality" value="Bangladeshi" required>
                         </div>
                         <div class="input">
-                            <label for="birth">Birth Date*</label>
-                            <input type="date" name="birth" id="birth" required>
+                            <label for="birth_date">Birth Date*</label>
+                            <input type="date" name="birth_date" id="birth_date" required>
                         </div>
                         <div class="input">
                             <label for="religion">Religion*</label>
@@ -64,8 +70,8 @@
                             </select>
                         </div>
                         <div class="input">
-                            <label for="marital">Marital status*</label>
-                            <select name="marital" id="marital" required>
+                            <label for="marital_status">Marital status*</label>
+                            <select name="marital_status" id="marital_status" required>
                                 <option value="unmarried">Unmarried</option>
                                 <option value="married">Married</option>
                                 <option value="widow">Widow</option>
@@ -81,22 +87,22 @@
                 <div class="work">
                     <div class="col">
                         <div class="input">
-                            <label for="designation">Designation</label>
-                            <input type="text" name="designation" id="designation" placeholder="Electrician">
+                            <label for="designation_1">Designation</label>
+                            <input type="text" name="designation_1" id="designation_1" placeholder="Electrician">
                         </div>
                         <div class="input">
-                            <label for="workplace">Workplace</label>
-                            <input type="text" name="workplace" id="workplace" placeholder="Engineering Institute">
+                            <label for="workplace_1">Workplace</label>
+                            <input type="text" name="workplace_1" id="workplace_1" placeholder="Engineering Institute">
                         </div>
                         <div class="input">
-                            <label for="time">Time Frame</label>
-                            <input type="text" name="time" id="time" placeholder="2015-Present">
+                            <label for="time_frame_1">Time Frame</label>
+                            <input type="text" name="time_frame_1" id="time_frame_1" placeholder="2015-Present">
                         </div>
                     </div>
                     <div class="col">
                         <div class="input">
-                            <label for="desc">Description</label>
-                            <textarea name="desc" id="desc" placeholder="Describe your job here ..."></textarea>
+                            <label for="description_1">Description</label>
+                            <textarea name="description_1" id="description_1" placeholder="Describe your job here ..."></textarea>
                         </div>
                     </div>
                 </div>
@@ -104,22 +110,23 @@
                 <div class="work">
                     <div class="col">
                         <div class="input">
-                            <label for="designation">Designation</label>
-                            <input type="text" name="designation" id="designation" placeholder="Electrician">
+                            <label for="designation_2">Designation</label>
+                            <input type="text" name="designation_2" id="designation_2" placeholder="Electrician">
                         </div>
                         <div class="input">
-                            <label for="workplace">Workplace</label>
-                            <input type="text" name="workplace" id="workplace" placeholder="Engineering Institute">
+                            <label for="workplace_2">Workplace</label>
+                            <input type="text" name="workplace_2" id="workplace_2"
+                                placeholder="Engineering Institute">
                         </div>
                         <div class="input">
-                            <label for="time">Time Frame</label>
-                            <input type="text" name="time" id="time" placeholder="2015-Present">
+                            <label for="time_frame_2">Time Frame</label>
+                            <input type="text" name="time_frame_2" id="time_frame_2" placeholder="2015-Present">
                         </div>
                     </div>
                     <div class="col">
                         <div class="input">
-                            <label for="desc">Description</label>
-                            <textarea name="desc" id="desc" placeholder="Describe your job here ..."></textarea>
+                            <label for="description_2">Description</label>
+                            <textarea name="description_2" id="description_2" placeholder="Describe your job here ..."></textarea>
                         </div>
                     </div>
                 </div>
@@ -131,23 +138,23 @@
                 <div class="education">
                     <div class="col">
                         <div class="input">
-                            <label for="exam">Examination</label>
-                            <input type="text" name="exam" id="exam" placeholder="SSC">
+                            <label for="exam_1">Examination</label>
+                            <input type="text" name="exam_1" id="exam_1" placeholder="SSC">
                         </div>
                         <div class="input">
-                            <label for="institute">Institute</label>
-                            <input type="text" name="institute" id="institute"
+                            <label for="institute_1">Institute</label>
+                            <input type="text" name="institute_1" id="institute_1"
                                 placeholder="Municipal Model High School">
                         </div>
                         <div class="input">
-                            <label for="session">Session</label>
-                            <input type="text" name="session" id="session" placeholder="2013-2015">
+                            <label for="session_1">Session</label>
+                            <input type="text" name="session_1" id="session_1" placeholder="2013-2015">
                         </div>
                     </div>
                     <div class="col">
                         <div class="input">
-                            <label for="desc">Description</label>
-                            <textarea name="desc" id="desc" placeholder="Describe here ..."></textarea>
+                            <label for="details_1">Description</label>
+                            <textarea name="details_1" id="details_1" placeholder="Describe here ..."></textarea>
                         </div>
                     </div>
                 </div>
@@ -155,29 +162,29 @@
                 <div class="education">
                     <div class="col">
                         <div class="input">
-                            <label for="exam">Examination</label>
-                            <input type="text" name="exam" id="exam" placeholder="HSC">
+                            <label for="exam_2">Examination</label>
+                            <input type="text" name="exam_2" id="exam_2" placeholder="HSC">
                         </div>
                         <div class="input">
-                            <label for="institute">Institute</label>
-                            <input type="text" name="institute" id="institute" placeholder="Cambrina College">
+                            <label for="institute_2">Institute</label>
+                            <input type="text" name="institute_2" id="institute_2" placeholder="Cambrina College">
                         </div>
                         <div class="input">
-                            <label for="session">Session</label>
-                            <input type="text" name="session" id="session" placeholder="2015-2017">
+                            <label for="session_2">Session</label>
+                            <input type="text" name="session_2" id="session_2" placeholder="2015-2017">
                         </div>
                     </div>
                     <div class="col">
                         <div class="input">
-                            <label for="desc">Description</label>
-                            <textarea name="desc" id="desc" placeholder="Describe here ..."></textarea>
+                            <label for="details_2">Description</label>
+                            <textarea name="details_2" id="details_2" placeholder="Describe here ..."></textarea>
                         </div>
                     </div>
                 </div>
 
                 <div class="buttons">
                     <button class="button" type="reset">Cancel</button>
-                    <button class="button submit" type="submit">Update</button>
+                    <button class="button submit" type="submit">Build</button>
                 </div>
             </form>
         </section>

@@ -1,7 +1,7 @@
 @extends('admin.layout.adminLayout')
 
 @section('title', '| Edit Worker')
-@section('pageTitle', 'Edit Worker')
+@section('pageTitle', 'Edit Worker Profile')
 
 @section('main')
     <main id="cProfile">
@@ -20,50 +20,41 @@
                         <p>worker information</p>
                     </div>
                     <div class="card_body">
-                        <form class="personal_info">
+                        <form class="personal_info" method="POST" enctype="multipart/form-data"
+                            action="{{ route('admin.update-worker', ['id' => $worker->id]) }}">
+                            @csrf
                             <div class="input">
                                 <label for="name">name</label>
-                                <input type="text" name="name" id="name" value="Jimmy Polo" required>
+                                <input type="text" name="name" id="name" value="{{ $worker->name }}" required>
                             </div>
                             <div class="input">
                                 <label for="email">email</label>
-                                <input type="email" name="email" id="email" value="jimmypolo@mail.com" required>
+                                <input type="email" name="email" id="email" value="{{ $worker->email }}" required>
                             </div>
                             <div class="input">
                                 <label for="role">user role</label>
-                                <select name="role" id="role" required>
-                                    <option value="worker">Worker</option>
-                                    <option value="client">Client</option>
-                                </select>
+                                <input type="text" name="role" id="role" value="{{ $worker->role }}" required
+                                    disabled>
+                                <input type="hidden" name="role" value="{{ $worker->role }}">
                             </div>
                             <div class="input">
                                 <label for="service">Service</label>
                                 <select name="service" id="service" required>
-                                    <option value="" disabled selected>Select your service type</option>
-                                    <option value="cleaing">Cleaning</option>
-                                    <option value="eletrical">Electrical</option>
-                                    <option value="plumbing">Plumbing</option>
-                                    <option value="pest_control">Pest Control</option>
-                                    <option value="auto_care">Auto Care</option>
+                                    <option value="" disabled selected>Select worker service type</option>
+                                    <option value="Cleaning">Cleaning</option>
+                                    <option value="Electrical">Electrical</option>
+                                    <option value="Plumbing">Plumbing</option>
+                                    <option value="Pest Control">Pest Control</option>
+                                    <option value="Auto Care">Auto Care</option>
                                 </select>
                             </div>
                             <div class="input">
                                 <label for="phone">phone</label>
-                                <input type="tel" name="phone" id="phone" value="+8801400492967" required>
+                                <input type="tel" name="phone" id="phone" value="{{ $worker->phone }}" required>
                             </div>
                             <div class="input">
-                                <label for="add">address</label>
-                                <input type="text" name="add" id="add"
-                                    value="876 Askarabad, Dewanhat, Chattogram-4000" required>
-                            </div>
-                            <div class="input">
-                                <label for="photo">photo</label>
-                                <div class="input_img">
-                                    <img src="{{ asset('image/user.jpg') }}" alt="" class="user_image"
-                                        id="image">
-                                    <label for="uploadImage" class="upload_img">Upload your photo</label>
-                                    <input type="file" name="image" id="uploadImage" accept="image/*">
-                                </div>
+                                <label for="address">address</label>
+                                <input type="text" name="address" id="address" value="{{ $worker->address }}" required>
                             </div>
                             <hr>
                             <div class="buttons">

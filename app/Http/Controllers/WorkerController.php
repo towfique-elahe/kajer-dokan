@@ -140,34 +140,34 @@ class WorkerController extends Controller
 
         public function buildResume(Request $request)
         {
-            $job = new Resume();
-            $job->worker_id = $request->input('worker_id');
-            $job->worker_name = $request->input('worker_name');
-            $job->worker_email = $request->input('worker_email');
-            $job->worker_phone = $request->input('worker_phone');
-            $job->worker_address = $request->input('worker_address');
-            $job->worker_service = $request->input('worker_service');
-            $job->nationality = $request->input('nationality');
-            $job->birth_date = $request->input('birth_date');
-            $job->religion = $request->input('religion');
-            $job->marital_status = $request->input('marital_status');
-            $job->designation_1 = $request->input('designation_1');
-            $job->designation_2 = $request->input('designation_2');
-            $job->workplace_1 = $request->input('workplace_1');
-            $job->workplace_2 = $request->input('workplace_2');
-            $job->time_frame_1 = $request->input('time_frame_1');
-            $job->time_frame_2 = $request->input('time_frame_2');
-            $job->description_1 = $request->input('description_1');
-            $job->description_2 = $request->input('description_2');
-            $job->exam_1 = $request->input('exam_1');
-            $job->exam_2 = $request->input('exam_2');
-            $job->institute_1 = $request->input('institute_1');
-            $job->institute_2 = $request->input('institute_2');
-            $job->session_1 = $request->input('session_1');
-            $job->session_2 = $request->input('session_2');
-            $job->details_1 = $request->input('details_1');
-            $job->details_2 = $request->input('details_2');
-            $job->save();
+            $resume = new Resume();
+            $resume->worker_id = $request->input('worker_id');
+            $resume->worker_name = $request->input('worker_name');
+            $resume->worker_email = $request->input('worker_email');
+            $resume->worker_phone = $request->input('worker_phone');
+            $resume->worker_address = $request->input('worker_address');
+            $resume->worker_service = $request->input('worker_service');
+            $resume->nationality = $request->input('nationality');
+            $resume->birth_date = $request->input('birth_date');
+            $resume->religion = $request->input('religion');
+            $resume->marital_status = $request->input('marital_status');
+            $resume->designation_1 = $request->input('designation_1');
+            $resume->designation_2 = $request->input('designation_2');
+            $resume->workplace_1 = $request->input('workplace_1');
+            $resume->workplace_2 = $request->input('workplace_2');
+            $resume->time_frame_1 = $request->input('time_frame_1');
+            $resume->time_frame_2 = $request->input('time_frame_2');
+            $resume->description_1 = $request->input('description_1');
+            $resume->description_2 = $request->input('description_2');
+            $resume->exam_1 = $request->input('exam_1');
+            $resume->exam_2 = $request->input('exam_2');
+            $resume->institute_1 = $request->input('institute_1');
+            $resume->institute_2 = $request->input('institute_2');
+            $resume->session_1 = $request->input('session_1');
+            $resume->session_2 = $request->input('session_2');
+            $resume->details_1 = $request->input('details_1');
+            $resume->details_2 = $request->input('details_2');
+            $resume->save();
 
             return redirect()->route('worker.resume');
         }

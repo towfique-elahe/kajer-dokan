@@ -1,7 +1,7 @@
 @extends('admin.layout.adminLayout')
 
 @section('title', '| Transactions')
-@section('pageTitle', 'Transactions')
+@section('pageTitle', 'All Transactions')
 
 @section('main')
     <main id="cTrans">
@@ -17,120 +17,36 @@
                     </div>
                     <p>recent transactions</p>
                 </div>
-                <div class="card_body">
-                    <table class="transaction">
-                        <thead>
-                            <tr>
-                                <th>Id</th>
-                                <th>Date</th>
-                                <th>Amount</th>
-                                <th>Details</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>#001</td>
-                                <td>15 Jun, 2023</td>
-                                <td>৳ 1500</td>
-                                <td>
-                                    <a href="javascript:void()">
-                                        <iconify-icon icon="icon-park-solid:transaction-order"></iconify-icon>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>#001</td>
-                                <td>15 Jun, 2023</td>
-                                <td>৳ 1500</td>
-                                <td>
-                                    <a href="javascript:void()">
-                                        <iconify-icon icon="icon-park-solid:transaction-order"></iconify-icon>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>#001</td>
-                                <td>15 Jun, 2023</td>
-                                <td>৳ 1500</td>
-                                <td>
-                                    <a href="javascript:void()">
-                                        <iconify-icon icon="icon-park-solid:transaction-order"></iconify-icon>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>#001</td>
-                                <td>15 Jun, 2023</td>
-                                <td>৳ 1500</td>
-                                <td>
-                                    <a href="javascript:void()">
-                                        <iconify-icon icon="icon-park-solid:transaction-order"></iconify-icon>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>#001</td>
-                                <td>15 Jun, 2023</td>
-                                <td>৳ 1500</td>
-                                <td>
-                                    <a href="javascript:void()">
-                                        <iconify-icon icon="icon-park-solid:transaction-order"></iconify-icon>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>#001</td>
-                                <td>15 Jun, 2023</td>
-                                <td>৳ 1500</td>
-                                <td>
-                                    <a href="javascript:void()">
-                                        <iconify-icon icon="icon-park-solid:transaction-order"></iconify-icon>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>#001</td>
-                                <td>15 Jun, 2023</td>
-                                <td>৳ 1500</td>
-                                <td>
-                                    <a href="javascript:void()">
-                                        <iconify-icon icon="icon-park-solid:transaction-order"></iconify-icon>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>#001</td>
-                                <td>15 Jun, 2023</td>
-                                <td>৳ 1500</td>
-                                <td>
-                                    <a href="javascript:void()">
-                                        <iconify-icon icon="icon-park-solid:transaction-order"></iconify-icon>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>#001</td>
-                                <td>15 Jun, 2023</td>
-                                <td>৳ 1500</td>
-                                <td>
-                                    <a href="javascript:void()">
-                                        <iconify-icon icon="icon-park-solid:transaction-order"></iconify-icon>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>#001</td>
-                                <td>15 Jun, 2023</td>
-                                <td>৳ 1500</td>
-                                <td>
-                                    <a href="javascript:void()">
-                                        <iconify-icon icon="icon-park-solid:transaction-order"></iconify-icon>
-                                    </a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                @if (count($transactions) > 0)
+                    <div class="card_body">
+                        <table class="transaction">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($transactions as $transaction)
+                                    <tr>
+                                        <td>{{ $transaction->id }}</td>
+                                        <td>{{ $transaction->created_at }}</td>
+                                        <td>৳ {{ $transaction->amount }}</td>
+                                        <td>
+                                            <a href="{{ route('admin.transaction', [$transaction->id]) }}">
+                                                <iconify-icon icon="icon-park-solid:transaction-order"></iconify-icon>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                @else
+                    <p style="text-align: center">No transactions available</p>
+                @endif
             </div>
         </section>
     </main>

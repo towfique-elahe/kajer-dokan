@@ -11,16 +11,17 @@
         <!-- main content -->
         <section class="main">
             <div class="buttons">
-                <a href="{{ route('admin.eidt-client') }}" class="button submit"><iconify-icon
+                <a href="{{ route('admin.client.edit', ['id' => $client->id]) }}" class="button submit"><iconify-icon
                         icon="iconamoon:edit-fill"></iconify-icon>Edit</a>
-                <a href="javascript:void()" class="button negative"><iconify-icon
+                <a href="{{ route('admin.client.delete', ['id' => $client->id]) }}" class="button negative"><iconify-icon
                         icon="material-symbols:delete"></iconify-icon>Delete Account</a>
             </div>
 
             <div class="card aWorker">
                 <div class="head">
-                    <img src="{{ asset('image/user.jpg') }}" alt="">
-                    <h2 class="name">jimmy polo</h2>
+                    <img src="{{ !empty($client->image) ? url('upload/' . $client->image) : url('image/user.jpg') }}"
+                        alt="">
+                    <h2 class="name">{{ $client->name }}</h2>
                 </div>
                 <div class="body">
                     <h3 class="r_heading">
@@ -29,19 +30,19 @@
                     <div class="textarea personal">
                         <dl>
                             <dt>name: </dt>
-                            <dd>Jimmy Polo</dd>
+                            <dd>{{ $client->name }}</dd>
                         </dl>
                         <dl>
                             <dt>email: </dt>
-                            <dd>jimmypolo@email.com</dd>
+                            <dd>{{ $client->email }}</dd>
                         </dl>
                         <dl>
                             <dt>phone: </dt>
-                            <dd>01400492967</dd>
+                            <dd>{{ $client->phone }}</dd>
                         </dl>
                         <dl>
                             <dt>address: </dt>
-                            <dd>Bundle Road, Patharghata, Chattogram - 4000</dd>
+                            <dd>{{ $client->address }}</dd>
                         </dl>
                     </div>
                 </div>

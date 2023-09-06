@@ -40,45 +40,44 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
     Route::get('/admin/dashboard', [DashboardController::class, 'admin'])->name('admin.dashboard');
 
-    Route::get('/admin/client', function () {
-        return view('admin.client');
-    })->name('admin.client');
 
-    Route::get('/admin/clients', function () {
-        return view('admin.clients');
-    })->name('admin.clients');
 
-    Route::get('/admin/eidt-client', function () {
-        return view('admin.edit-client');
-    })->name('admin.eidt-client');
 
-    Route::get('/admin/edit-worker', function () {
-        return view('admin.edit-worker');
-    })->name('admin.edit-worker');
 
-    Route::get('/admin/edit-worker-resume', function () {
-        return view('admin.edit-worker-resume');
-    })->name('admin.edit-worker-resume');
+
+    Route::get('/admin/clients', [AdminController::class, 'viewClients'])->name('admin.clients');
+    Route::get('/admin/client/{id}', [AdminController::class, 'viewClient'])->name('admin.client');
+    Route::get('/admin/client/{id}/edit', [AdminController::class, 'editClient'])->name('admin.client.edit');
+    Route::post('/admin/client/{id}/update', [AdminController::class, 'updateClient'])->name('admin.client.update');
+    Route::get('/admin/client/{id}/delete', [AdminController::class, 'deleteClient'])->name('admin.client.delete');
+
 
     Route::get('/admin/profile', function () {
         return view('admin.profile');
     })->name('admin.profile');
 
-    Route::get('/admin/transactions', function () {
-        return view('admin.transactions');
-    })->name('admin.transactions');
 
-    Route::get('/admin/worker', function () {
-        return view('admin.worker');
-    })->name('admin.worker');
 
-    Route::get('/admin/worker-resume', function () {
-        return view('admin.worker-resume');
-    })->name('admin.worker-resume');
 
-    Route::get('/admin/workers', function () {
-        return view('admin.workers');
-    })->name('admin.workers');
+
+    Route::get('/admin/workers', [AdminController::class, 'viewWorkers'])->name('admin.workers');
+
+
+    Route::get('/admin/worker/{id}', [AdminController::class, 'viewWorker'])->name('admin.worker');
+    Route::get('/admin/edit-worker/{id}', [AdminController::class, 'workerProfileEdit'])->name('admin.edit-worker');
+    Route::post('/admin/update-worker/{id}', [AdminController::class, 'workerProfileUpdate'])->name('admin.update-worker');
+    Route::get('/admin/delete-worker/{id}', [AdminController::class, 'deleteWorker'])->name('admin.delete-worker');
+
+
+    Route::get('/admin/worker/{id}/resume', [AdminController::class, 'viewWorkerResume'])->name('admin.worker-resume');
+    Route::get('/admin/worker/{id}/resume/edit', [AdminController::class, 'editWorkerResume'])->name('admin.worker-resume-edit');
+    Route::post('/admin/worker/resume/update', [AdminController::class, 'updateWorkerResume'])->name('admin.worker-resume-update');
+    Route::get('/admin/worker/resume/{id}/delete', [AdminController::class, 'deleteWorkerResume'])->name('admin.worker-resume-delete');
+
+
+    Route::get('/admin/transactions', [AdminController::class, 'viewTransactions'])->name('admin.transactions');
+    Route::get('/admin/transaction/{id}', [AdminController::class, 'viewTransaction'])->name('admin.transaction');
+
 });
 
 
