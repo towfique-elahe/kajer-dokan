@@ -1,66 +1,30 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="" target="_blank"><img src="https://github.com/towfique-elahe/kajer-dokan-ui/blob/main/vendor/media/logo.svg" width="250" alt="Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# About Kajer Dokan
 
-## About Laravel
+This repository contains the source code for the Kajer Dokan web design, which was designed and implemented using raw HTML, CSS, and JavaScript. Below, you'll find an overview of the technical details and components used in the development of this website.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Technologies Used
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **HTML5:** The website's structure and content are built using semantic HTML5 elements to ensure accessibility and SEO-friendliness.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **CSS3:** Cascading Style Sheets (CSS) were employed to define the website's layout, styles, and responsive design, ensuring a visually appealing user experience across various devices.
 
-## Learning Laravel
+- **JavaScript:** JavaScript was used to enhance user interactivity and implement dynamic features such as form validation and image sliders.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- **mySQL:** mySQL was used as database management system.
+  
+- **Laravel:** Laravel was used to handle the backend.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/)
+
+## Screenshots
+![Web capture_21-9-2023_0340_kajer-dokan vercel app](https://github.com/towfique-elahe/kajer-dokan-ui/assets/68939516/06fa29a0-248e-46ef-8b47-4722201fb714)
+![Web capture_21-9-2023_0414_kajer-dokan vercel app](https://github.com/towfique-elahe/kajer-dokan-ui/assets/68939516/d3ac952c-2849-4200-9d25-abdcf5fe2a3e)
+![Web capture_21-9-2023_0426_kajer-dokan vercel app](https://github.com/towfique-elahe/kajer-dokan-ui/assets/68939516/3126d11d-698c-48d0-9082-c2dafd7ef342)
+
+<p align="center">
+  © 2023 Towfique Elahe. All rights reserved.
+</p>
